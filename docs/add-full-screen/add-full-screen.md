@@ -76,7 +76,7 @@
 - 百度浏览器
 - 小米(亲测，可以)
 注意一点，虽然你点击了安装，也提示你安装成功，但是桌面上仍然看不到快捷方式，这个跟手机的系统权限有关，比如华为和小米，需要手动开启支持安装快捷方式的权限
-![chrome-permission](images/chrome-permission.jpg)
+![chrome-permission](images/chrome-permission.png)
 - 查看浏览器支持权限：https://lavas.baidu.com/ready/feature
 ### 如何调试
 工具：http-server，ngrok(自选)
@@ -87,11 +87,11 @@
 用chrome 打开server 地址
 打开控制台， 点击Application 栏
 如红圈所标注。点击add to homescreen.即可触发安装横幅功能
-![homescreen](images/homescreen.jpg)
+![homescreen](images/homescreen.png)
 只要弹出以上的弹框，即可认为添加横幅成功
 ### 取消或延迟安装横幅的触发事件
-浏览器会根据上文中的触发横幅条件来计算弹框的时机，但是很多时候，我们需要更友好的交互，来控制弹框的时机.因此浏览器也提供了一些事件接口供网站开发者使用
-beforeinstallprompt'：判断用户是否安装此应用
+浏览器会根据上文中的触发横幅条件来计算弹框的时机，但是很多时候，我们需要更友好的交互，来控制弹框的时机.因此浏览器也提供了一些事件接口供网站开发者使用.
+
 ```
 var dfdPrompt = null;
 var button = document.getElementById('btn');
@@ -128,12 +128,12 @@ button.addEventListener('click', function (e) {
 });
 
 ```
-- TIPS:
-dfdPrompt.prompt(); 只会触发一次。所以，如果你拒绝安装横幅。将不再能弹出添加提示
+### TIPS:
+- dfdPrompt.prompt(); 只会触发一次。所以，如果你拒绝安装横幅。将不再能弹出添加提示
 目前暂时没有事件（或者我没有找到）可以强制让浏览器自动弹出横幅（但pc版可以点击上图的add full screen 强行唤起添加横幅功能），弹出时机仍然是上面的条件。但是也不代表满足条件就一定会自动触发，具体还是根据浏览器的算法，
 除非你手动点击浏览器的添加到主屏幕的功能
-![addscreen](images/addscreen.jpg)
+![addscreen](images/addscreen.png)
 
 具体效果截图如下
-![desktop](images/desktop.jpg)
-![screen](images/screen.jpg)
+
+- ![desktop](images/desktop.png) - ![screen](images/screen.png)
