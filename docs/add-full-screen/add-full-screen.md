@@ -48,7 +48,7 @@
 - standalone: 应用
 - minimal-ui: 类似于应用模式，但比应用模式多一些系统导航控制元素，但又不同于浏览器模式
 - browser: 浏览器模式，默认值
-- name: 应用名称(用于安装横幅显示)
+- name: 应用名称(安装横幅显示的名字)
 - orientation: 定义默认应用显示方向，竖屏、横屏
 - prefer_related_applications: 是否设置对应移动应用，默认为 false
 - related_applications: 获取移动应用的方式
@@ -81,7 +81,7 @@
 ### 如何调试
 工具：http-server，ngrok(自选)
 - 首先你需要一个server，让你的项目run起来
-- 因为add to full screen 支持本地127的调试，所以http-server 足够了。
+- 因为Add to Homescreen 支持本地127的调试，所以http-server 足够了。
 - 不过当你用LightHouse 分析的时候，会发现提示显示你没有https 提供，暂时先不用管，当然如果你需要本地启动https 的服务，可以装一个ngrok
 
 用chrome 打开server 地址
@@ -119,7 +119,7 @@ button.addEventListener('click', function (e) {
   // 通过按钮点击事件触发横幅显示
   dfdPrompt.prompt();
   console.info('prompt');
-  // 监控用户的安装行为
+  // 用户的安装行为
   dfdPrompt.userChoice.then(function (choiceResult) {
     console.info(choiceResult.outcome);
   });
@@ -131,10 +131,11 @@ button.addEventListener('click', function (e) {
 ```
 ### TIPS:
 - dfdPrompt.prompt(); 只会触发一次。所以，如果你拒绝安装横幅。将不再能弹出添加提示
-- 目前暂时没有事件（或者我没有找到）可以强制让浏览器自动弹出横幅（但pc版可以点击上图的add full screen 强行唤起添加横幅功能），弹出时机仍然是上面的条件。但是也不代表满足条件就一定会自动触发，具体还是根据浏览器的算法，
-除非你手动点击浏览器的添加到主屏幕的功能
+- 目前暂时没有事件（或者我没有找到）可以强制让浏览器自动弹出横幅（但pc版可以点击上图的Add to homescreen 强行唤起添加横幅功能），
+- 自动弹出时机仍然是上面的条件。但是也不代表满足条件就一定会自动触发，具体还是根据浏览器的算法，除非你手动点击浏览器的添加到主屏幕的功能
+
 ![addscreen](images/addscreen.png)
 
 最终具体效果图如下
 
-- ![desktop](images/desktop.png) - ![screen](images/screen.png)
+- ![desktop](images/desktop.png)  ![screen](images/screen.png)
