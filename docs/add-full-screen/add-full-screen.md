@@ -77,7 +77,7 @@
 - 小米(亲测，可以)
 注意一点，虽然你点击了安装，也提示你安装成功，但是桌面上仍然看不到快捷方式，这个跟手机的系统权限有关，比如华为和小米，需要手动开启支持安装快捷方式的权限
 ![chrome-permission](images/chrome-permission.png)
-- 查看浏览器支持权限：https://lavas.baidu.com/ready/feature
+- 查看浏览器支持权限：https://lavas.baidu.com/ready/feature (百度团队维护的一个浏览器权限列表)
 ### 如何调试
 工具：http-server，ngrok(自选)
 - 首先你需要一个server，让你的项目run起来
